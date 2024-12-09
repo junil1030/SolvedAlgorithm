@@ -65,6 +65,15 @@ int main()
 	}
 }
 
+void print()
+{
+	for (int i = 0; i < 7; i++)
+	{
+		cout << i << " ";
+	}
+	cout << "\n";
+}
+
 int b[9];
 int n = 9, r = 7;
 void makePermutation(int n, int r, int depth)
@@ -83,11 +92,3 @@ void makePermutation(int n, int r, int depth)
 	}
 }
 
-void print()
-{
-	for (int i = 0; i < 7; i++)
-	{
-		cout << i << " ";
-	}
-	cout << "\n";
-}
