@@ -33,12 +33,27 @@ vector<int> era(int mx_n) {
 	return v;
 }
 
+// 등차수열의 합
+// a = 초항 / n = 항 / d = 공차 / l = 마지막 항
+// Sn = n(a + l) / 2
+// Sn = n(2a + (n - 1)d) / 2
+int APanl(int n, int a, int l) {
+	return (n * (a + l)) / 2;
+}
+
+int APand(int n, int a, int d) {
+	return (n * ((2 * a) + ((n - 1) * d))) / 2;
+}
+
 int main() {
 	int a = 10, b = 12;
 	cout << lcm(a, b) << '\n';
 
 	vector<int> vctEra = era(max_n);
 	for (int i : vctEra) cout << i << " ";
+
+	cout << APanl(5, 3, 23) << '\n';
+	cout << APand(5, 3, 5) << '\n';
 
 	return 0;
 }
