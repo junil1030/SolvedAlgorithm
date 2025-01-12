@@ -45,6 +45,37 @@ int APand(int n, int a, int d) {
 	return (n * ((2 * a) + ((n - 1) * d))) / 2;
 }
 
+// 등비수열의 합
+// a = 초항 / r = 공비 / n = 더하는 것의 개수
+// a(r^n - 1) / (r - 1)
+// a / (1 - r)
+vector<double> GC(double a, double r, int n) {
+	vector<double> result;
+	if (n <= 0)
+		return result;
+
+	double sum = 0.0;
+	double term = a;
+
+	if (r == 1) {
+		sum = a * n;
+		result.push_back(sum);
+		for (int i = 0; i < n; ++i) {
+			result.push_back(a);
+		}
+	}
+	else {
+		for (int i = 0; i < n; ++i) {
+			result.push_back(term);
+			sum += term;
+			term *= r;
+		}
+		result.push_back(sum); // 마지막에 합한 값을 삽입
+	}
+
+	return result;
+}
+
 int main() {
 	int a = 10, b = 12;
 	cout << lcm(a, b) << '\n';
@@ -54,6 +85,10 @@ int main() {
 
 	cout << APanl(5, 3, 23) << '\n';
 	cout << APand(5, 3, 5) << '\n';
+
+	vector<double> gc = GC(2.0, 3.0, 5);
+	for (double a : gc)
+		cout << a << " ";
 
 	return 0;
 }
