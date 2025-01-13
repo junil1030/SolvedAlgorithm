@@ -35,6 +35,7 @@ void bfs(int here) {
 int main() {
 	adj[10].push_back(12);
 	adj[10].push_back(14);
+	adj[10].push_back(16);
 
 	adj[12].push_back(18);
 	adj[12].push_back(20);
