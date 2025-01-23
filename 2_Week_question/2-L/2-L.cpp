@@ -23,7 +23,7 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		cin >> o >> s;
 		if (A > B) go(asum, s);
-		else if (B < A) go(bsum, s);
+		else if (B > A) go(bsum, s);
 		o == 1 ? A++ : B++;
 		prev = s; 
 	}
@@ -31,4 +31,6 @@ int main() {
 	else if (A < B) go(bsum, "48:00");
 	cout << print(asum) << "\n";
 	cout << print(bsum) << "\n";
+
+	return 0;
 }
