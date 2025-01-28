@@ -38,3 +38,39 @@ public:
 	void run(int nNode);
 };
 
+class C_DIJKSTRA2
+{
+private:
+	struct S_NODE
+	{
+		int nId;
+		std::map<S_NODE*, int> children;
+		bool bVisit;
+	};
+	struct S_INFO
+	{
+		S_NODE* pNode;
+		S_NODE* pParent;
+		int nLengthTotal;
+	};
+	struct S_CMP
+	{
+		bool operator()(S_INFO* pDst, S_INFO* pSrc)
+		{
+			return pDst->nLengthTotal > pSrc->nLengthTotal;
+		}
+	};
+
+private:
+	std::map<int, S_NODE*> m_mapNode;
+
+private:
+	S_NODE* createNode(int nId);
+	void linkNode(int nParent, int nChild, int nLength);
+
+public:
+	C_DIJKSTRA2() = default;
+	void load();
+	void print();
+	void run(int nNode);
+};
