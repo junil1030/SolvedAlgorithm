@@ -117,7 +117,7 @@ C_DIJKSTRA2::S_NODE* C_DIJKSTRA2::createNode(int nId)
 	return pNew;
 }
 
-void C_DIJKSTRA::linkNode(int nParent, int nChild, int nLength)
+void C_DIJKSTRA2::linkNode(int nParent, int nChild, int nLength)
 {
 	S_NODE* pParent = m_mapNode.find(nParent)->second;
 	S_NODE* pChild = m_mapNode.find(nChild)->second;
