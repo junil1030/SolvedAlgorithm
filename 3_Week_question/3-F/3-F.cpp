@@ -36,8 +36,8 @@ int main() {
 			num.push_back(a);
 		}
 	}
-
 	go(0, num[0]);
+	cout << ret << "\n";
 
-	int a = 0;
+	return 0;
 }
